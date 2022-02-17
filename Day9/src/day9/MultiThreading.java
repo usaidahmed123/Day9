@@ -26,16 +26,17 @@ public class MultiThreading implements Runnable {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		for(int i=0;i<5;i++) {
-		bike b = new bike();
-		b.setPriority(Thread.NORM_PRIORITY);
-		b.start();
-		}
+		
 		cycles c = new cycles();
 		c.setPriority(Thread.MAX_PRIORITY);
 		c.start();
 		scooter s = new scooter();
 		s.start();
+	for(int i=0;i<5;i++) {
+		bike b = new bike();
+		b.setPriority(Thread.NORM_PRIORITY);
+		b.start();
+		}
 		MultiThreading m = new MultiThreading();
 		Thread t = new Thread(m);
 		t.setPriority(Thread.MAX_PRIORITY);
